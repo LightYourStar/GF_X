@@ -1,4 +1,6 @@
-﻿public partial class LanguagesDialog : UIFormBase
+﻿using UnityEngine;
+
+public partial class LanguagesDialog : UIFormBase
 {
     public const string P_LangChangedCb = "LangChangedCb";
     VarAction m_VarAction;
@@ -8,6 +10,7 @@
         base.OnOpen(userData);
         m_VarAction = Params.Get<VarAction>(P_LangChangedCb);
         RefreshList();
+        Debug.Log($"----- 打开语言选择界面 -----");
     }
     protected override void OnClose(bool isShutdown, object userData)
     {
